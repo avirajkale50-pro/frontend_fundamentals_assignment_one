@@ -1,14 +1,16 @@
-/* CSS Custom Properties (Variables) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* =========================
+   CSS Custom Properties
+========================= */
 :root {
     /* Colors */
-    --color-primary: #667eea;
-    --color-primary-dark: #5568d3;
-    --color-secondary: #764ba2;
+    --color-primary: #919191;
     --color-white: #ffffff;
     --color-text-dark: #2d3748;
     --color-text-medium: #718096;
     --color-border: #f0f0f0;
-    
+
     /* Social Media Colors */
     --color-github: #333333;
     --color-github-hover: #24292e;
@@ -16,45 +18,44 @@
     --color-twitter-hover: #1a91da;
     --color-linkedin: #0077b5;
     --color-linkedin-hover: #006399;
-    
-    /* Spacing Scale (using rem) */
-    --spacing-xs: 0.5rem;      /* 8px */
-    --spacing-sm: 1rem;        /* 16px */
-    --spacing-md: 1.5rem;      /* 24px */
-    --spacing-lg: 2rem;        /* 32px */
-    --spacing-xl: 2.5rem;      /* 40px */
-    
-    /* Font Sizes (using rem) */
-    --font-size-base: 1rem;    /* 16px */
-    --font-size-sm: 0.875rem;  /* 14px */
-    --font-size-md: 1rem;      /* 16px */
-    --font-size-lg: 1.75rem;   /* 28px */
-    
+
+    /* Spacing */
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 2.5rem;
+
+    /* Font Sizes */
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.75rem;
+
     /* Font Weights */
-    --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-bold: 700;
-    
+
     /* Border Radius */
-    --radius-sm: 0.25rem;      /* 4px */
-    --radius-md: 1rem;         /* 16px */
+    --radius-sm: 0.25rem;
+    --radius-md: 1rem;
     --radius-full: 50%;
-    
+
     /* Shadows */
-    --shadow-sm: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
     --shadow-md: 0 0.625rem 2.5rem rgba(0, 0, 0, 0.15);
     --shadow-hover: 0 0.375rem 1rem rgba(0, 0, 0, 0.15);
-    
+
     /* Transitions */
     --transition-base: all 0.3s ease;
-    
-    /* Component Specific */
-    --card-max-width: 25rem;   /* 400px */
-    --photo-size: 7.5rem;      /* 120px */
-    --icon-size: 2.75rem;      /* 44px */
-    --icon-svg-size: 1.25rem;  /* 20px */
+
+    /* Component Sizes */
+    --card-max-width: 25rem;
+    --photo-size: 7.5rem;
+    --icon-size: 2.75rem;
+    --icon-svg-size: 1.25rem;
 }
 
+/* =========================
+   Base Styles
+========================= */
 * {
     margin: 0;
     padding: 0;
@@ -62,13 +63,12 @@
 }
 
 html {
-    /* 1rem = 16px (browser default) */
     font-size: 16px;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    font-family: "Poppins", sans-serif;
+    background: #f5f5f5;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -76,6 +76,9 @@ body {
     padding: var(--spacing-sm);
 }
 
+/* =========================
+   Profile Card
+========================= */
 .profile-card {
     background: var(--color-white);
     border-radius: var(--radius-md);
@@ -91,9 +94,8 @@ body {
     height: var(--photo-size);
     border-radius: var(--radius-full);
     margin: 0 auto var(--spacing-md);
-    border: var(--radius-sm) solid var(--color-border);
+    border: 1px solid var(--color-border);
     overflow: hidden;
-    box-shadow: var(--shadow-sm);
 }
 
 .profile-photo img {
@@ -106,7 +108,7 @@ body {
     font-size: var(--font-size-lg);
     font-weight: var(--font-weight-bold);
     color: var(--color-text-dark);
-    margin-bottom: var(--spacing-xs);
+    margin-bottom: 0.5rem;
     line-height: 1.2;
 }
 
@@ -120,7 +122,6 @@ body {
 
 .profile-bio {
     font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-normal);
     color: var(--color-text-medium);
     line-height: 1.6;
     margin-bottom: var(--spacing-md);
@@ -129,10 +130,12 @@ body {
     margin-right: auto;
 }
 
+/* =========================
+   Social Links
+========================= */
 .social-links {
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: var(--spacing-sm);
 }
 
@@ -144,8 +147,8 @@ body {
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    color: var(--color-white);
     transition: var(--transition-base);
-    cursor: pointer;
 }
 
 .social-icon:hover {
@@ -155,7 +158,6 @@ body {
 
 .social-icon.github {
     background-color: var(--color-github);
-    color: var(--color-white);
 }
 
 .social-icon.github:hover {
@@ -164,7 +166,6 @@ body {
 
 .social-icon.twitter {
     background-color: var(--color-twitter);
-    color: var(--color-white);
 }
 
 .social-icon.twitter:hover {
@@ -173,7 +174,6 @@ body {
 
 .social-icon.linkedin {
     background-color: var(--color-linkedin);
-    color: var(--color-white);
 }
 
 .social-icon.linkedin:hover {
@@ -186,10 +186,13 @@ body {
     fill: currentColor;
 }
 
+/* =========================
+   Responsive
+========================= */
 @media (max-width: 30rem) {
     :root {
-        --font-size-lg: 1.5rem;   /* 24px */
-        --font-size-sm: 0.8125rem; /* 13px */
+        --font-size-lg: 1.5rem;
+        --font-size-sm: 0.8125rem;
     }
 
     .profile-card {
